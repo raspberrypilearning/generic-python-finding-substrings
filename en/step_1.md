@@ -1,121 +1,55 @@
-# New project
+# Finding sub-strings with Python
 
-Each project contains a set of directories for each language, you're set up now with an `en` directory that contains the necessary files to get you going.
+Imagine you have a string like "Programming with Python is awesome". And you wanted to find out whether it has the word "with" in the string. How could you go about finding out?
 
-* [meta.yml](#metayml)
-* [Steps - step_1.md, step_2.md, etc](#steps)
+*[string]: A sequence of characters
 
+- Python has a very handy operator called `in`. It can be used to find out whether a data structure such as a string or a list contains a particular element.
 
-## meta.yml
+- If you open up a simple Python shell (either using IDLE or the Terminal), you can test this operator out.
 
-The `meta.yml` file sets lots of basic information for the project.
-
-``` yml
-title: The title of the project
-hero_image: images/banner.png # The image used on the listing view
-subtitle: Project subtitle # Used on the listing view
-description: Project description # Used on the listing view
-published: false # A boolean - `true` or`false` - that controls whether the project will appear on the listing view
-steps: # A list of all the steps
-  - title: How to get started # Used as the sidebar title for the step
-    duration: 60 # Not used yet
+```python
+>>> 'a' in 'cat'
+True
 ```
 
-## Steps
+- It also works for longer strings, so you can try this:
 
-* [Links](#links)
-* [Resources](#resources)
-* [Images](#images)
-* [Challenges](#challenges)
-* [Definitions](#definitions)
-* [Hints](#hints)
-* [Collapsed ingredients](#collapsed-ingredients)
-
-Project steps are written in the [Kramdown](https://kramdown.gettalong.org/) variety of markdown. There is a [quick reference guide](https://kramdown.gettalong.org/quickref.html) and [full syntax documentation](https://kramdown.gettalong.org/syntax.html). A [custom kramdown extension](https://github.com/RaspberryPiFoundation/kramdown_rpf) is used for hints, challenges & collapsed ingredients.
-
-### Links, resources & images
-
-See [kramdown documentation](https://kramdown.gettalong.org/quickref.html#links-and-images) for more details.
-
-#### Links
-
-A [link](http://kramdown.gettalong.org) to the kramdown homepage.
-
-#### Resources
-
-A [link to a file in the resources directory](resources/worksheet.pdf){:download='filename.pdf'}. The download part will make the file automatically download rather than be rendered in the browser, the filename you'd like the file to be saved with is the second bit after the `=`. The `/slash learning` application will ensure the resource is available.
-
-#### Images
-
-![Banner image](images/banner.png) - the link text becomes the alternative text for the image. The `/slash learning` application will ensure the image is available.
-
-#### Challenges
-
-``` markdown
---- challenge ---
-
-## Challenge: Improving your drum
-
-* Any markdown in here
-* will be parsed as normal
-
---- /challenge ---
+```python
+>>> 'with' in 'Programming with Python is awesome'
+True
+>>> 'with Python' in 'Programming with Python is awesome'
+True
 ```
 
+- Watch out though, it's case sensitive.
 
-### Definitions
-
-Definitions can be written using HTML abbreviations, which are a standard part of [kramdown](https://kramdown.gettalong.org/quickref.html#abbreviations)
-
-```
-To do this you might require a variable or a two word definition.
-
-*[variable]: An object that has a name and stores a value.
-
-*[two word]: Definitions are markdown, and can have [links](http://kramdown.gettalong.org) etc
+```python
+>>> 'with python' in 'Programming with Python is awesome'
+False
 ```
 
+- If you don't care about case, then you can use the `lower` or `upper` string method to convert the string to a single case.
 
-### Hints
-
-A header for the hint, and all the html markup for hints will be automatically added.
-
-```
---- hints ---
---- hint ---
-
-Here's a hint of how to do this project.
-
-Any markdown you like within a hint:
-* item 1
-* item 2
-
---- /hint ---
---- hint ---
-Hint 2
-
---- /hint ---
---- hint ---
-
-Hint 3
---- /hint ---
---- hint ---
-Hint 4
---- /hint ---
-
---- /hints ---
+```python
+>>> 'with python' in 'Programming with Python is awesome'.lower()
+True
 ```
 
-### Collapsed ingredients
+- Another problem you might encounter is looking for only whole words. For instance:
 
-Set the title and the image from within the `collapse` area. The image must exist in **this** project, not the ingredient.
+```python
+>>> 'on' in 'Programming with Python is awesome'.lower()
+True
+```
 
---- collapse ---
----
-title: Downloading and installing the Raspberry Pi software
-image: images/scratch.png
----
+- As you can see, it found the sub-string `on`, as it's the last two characters in the string `Python`. If you're only looking for single words, then you can split the string up first. This turns it into a list.
 
-[[[generic-scratch-new-project]]]
-
---- /collapse ---
+```python
+>>> 'Programming with Python is awesome'.lower().split()
+['programming', 'with', 'python', 'is', 'awesome']
+>>> 'on' in 'Programming with Python is awesome'.lower().split()
+False
+>>> 'python' in 'Programming with Python is awesome'.lower().split()
+True
+```
