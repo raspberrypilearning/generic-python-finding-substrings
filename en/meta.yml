@@ -1,10 +1,13 @@
-title: generic-python-finding-substrings
+title: Finding substrings with Python
 hero_image: images/banner.png
-subtitle: generic-python-finding-substrings subtitle
-description: generic-python-finding-substrings description
-original_url: https://codeclubprojects.org/en-GB/scratch/rock-band
+description: Find substrings in a string with Python
+original_url:
 theme: cc-prototype
-published: false
+duration: 1
+listed: false
+ingredient: true
+interests: ""
+technologies: "python"
 steps:
-  - title: Step one
-    duration: 60
+  - title: Find a substring
+

@@ -1,5 +1,3 @@
-# Finding sub-strings with Python
-
 Imagine you have a string like "Programming with Python is awesome". And you wanted to find out whether it has the word "with" in the string. How could you go about finding out?
 
 *[string]: A sequence of characters
