@@ -1,10 +1,10 @@
-Imagine you have a string like "Programming with Python is awesome". And you wanted to find out whether it has the word "with" in the string. How could you go about finding out?
+Imagine you have a string like "Programming with Python is awesome!", and you want to find out whether it has the word "with" in the string. How could you go about finding out?
 
 *[string]: A sequence of characters
 
 - Python has a very handy operator called `in`. It can be used to find out whether a data structure such as a string or a list contains a particular element.
 
-- If you open up a simple Python shell (either using IDLE or the Terminal), you can test this operator out.
+- If you open up a simple Python shell (either using IDLE or the Terminal), you can test out this operator.
 
 	```python
 	>>> 'a' in 'cat'
@@ -20,7 +20,7 @@ Imagine you have a string like "Programming with Python is awesome". And you wan
 	True
 	```
 
-- Watch out though, it's case sensitive.
+- Watch out though, it's case sensitive!
 
 	```python
 	>>> 'with python' in 'Programming with Python is awesome'
@@ -34,14 +34,14 @@ Imagine you have a string like "Programming with Python is awesome". And you wan
 	True
 	```
 
-- Another problem you might encounter is looking for only whole words. For instance:
+- If you want to look only for complete words, you might encounter another problem.
 
 	```python
 	>>> 'on' in 'Programming with Python is awesome'.lower()
 	True
 	```
 
-- As you can see, it found the sub-string `on`, as it's the last two characters in the string `Python`. If you're only looking for single words, then you can split the string up first. This turns it into a list.
+- As you can see, it found the substring `on`, as it's the last two characters in the string `Python`. If you're only looking for complete words, you can split the string up first. This turns it into a list.
 
 	```python
 	>>> 'Programming with Python is awesome'.lower().split()
