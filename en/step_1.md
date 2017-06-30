@@ -1,4 +1,4 @@
-Imagine you have a string like "Programming with Python is awesome!", and you want to find out whether it has the word "with" in the string. How could you go about finding out?
+Imagine you have a string like "Programming with Python is awesome", and you want to find out whether it contains the word "with". How could you go about finding out?
 
 *[string]: A sequence of characters
 
@@ -41,7 +41,7 @@ Imagine you have a string like "Programming with Python is awesome!", and you wa
 	True
 	```
 
-- As you can see, it found the substring `on`, as it's the last two characters in the string `Python`. If you're only looking for complete words, you can split the string up first. This turns it into a list.
+- As you can see, the operator found the substring `on`, as it's the last two characters in the string `Python`. If you only want to look for complete words, you can split the string up first. This turns it into a list.
 
 	```python
 	>>> 'Programming with Python is awesome'.lower().split()
